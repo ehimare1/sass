@@ -1,0 +1,114 @@
+$orange: #ff9900;
+$primary: #1f1e1e;
+$grey: #494949;
+$off-white: #ebebeb;
+
+body{
+    background-color: $off-white;
+
+}
+
+%header-style{
+    font-size: 45px;
+
+    font-weight: 700;
+
+    text-transform: capitalize;
+}
+
+@mixin flex($flex, $align, $justify) {
+    display: $flex;
+    align-items: $align;
+    justify-content: $justify;
+}
+
+
+.block{
+    padding-top: 150px;
+
+    color: $primary;
+
+    .wrapper{
+        max-width: 450px;
+        margin: auto;
+    }
+    .row{
+
+
+    }
+    .col{
+
+
+    }
+    .title{
+
+        @extend %header-style;
+    }
+    .group{
+
+        margin: 20px 0;
+        @include flex(flex, align-items, space-between );
+        
+
+        .author{
+            color: $orange;
+            text-decoration: none;
+            font-weight: 600;
+            font-style: oblique;
+
+        }
+
+        .date{
+            font-style: italic;
+
+            color: $grey;
+
+            &::before{
+                content: '-';
+            }
+        }
+       
+    }
+    p{
+        font-size: 14px;
+        line-height: 20px;
+        margin-bottom: 20px;
+    }
+   
+    .btn-group{
+        @include flex(flex, align-items, center );
+        gap: 20px;
+
+    }
+
+    .btn{
+        border: none;
+        background: $primary;
+        color: $off-white;
+        text-transform: capitalize;
+        padding: 8px 14px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 12px;
+        transition: all 150ms ease-in-out;
+
+        &.success{
+            background-color: rgb(109, 142, 60);
+        }
+        &.error{
+            background-color: rgb(237, 26, 26);
+        }
+        
+
+        &:hover{
+
+            background: $orange;
+            color: $primary;
+        }
+    }
+    .description{
+        @extend %header-style;
+    }
+}
+
+
